@@ -20,7 +20,10 @@ class Companies extends Model
       'address_line_2',
       'surbub',
       'city_town',
-      'postal_code'
+      'postal_code',
+      'category_id',
+      'ratings_id',
+      'services_id'
     ];
 
     protected $hidden = [
@@ -29,16 +32,16 @@ class Companies extends Model
 
     public function services()
     {
-      return $this->hasOne('App/Services');
+      return $this->hasOne('App\Services', 'id', 'services_id');
     }
 
     public function ratings()
     {
-      return $this->hasOne('App/Ratings');
+      return $this->hasOne('App\Ratings', 'id', 'ratings_id');
     }
 
     public function categories()
     {
-      return $this->hasMany('App/Categories');
+      return $this->hasOne('App\Categories', 'id', 'category_id');
     }
 }

@@ -18,6 +18,6 @@ class Services extends Model
 
     public function companies()
     {
-      return $this->hasOne('App/Companies');
+      return $this->belongsTo('App\Companies', 'services_id', 'id');
     }
 }

@@ -24,7 +24,7 @@ class CreateCompaniesTable extends Migration
             $table->string('address_line_2')->nullable();
             $table->string('surbub')->nullable();
             $table->string('city_town')->nullable();
-            $table->integer('postal_code')->nullable();
+            $table->string('postal_code')->nullable();
             $table->timestamps();
         });
     }

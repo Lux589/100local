@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 use App\Companies;
 use App\Services;
 use App\Ratings;
+use App\Categories;
 
 class companySeeder extends Seeder
 {
@@ -14,9 +15,6 @@ class companySeeder extends Seeder
      */
     public function run()
     {
-        factory(Companies::class, 50)->create()->each(function ($company) {
-          $company->services()->save(factory(Services::class)->make());
-          $company->ratings()->save(factory(Ratings::class)->make());
-        });
+        factory(Companies::class, 50)->create();
     }
 }

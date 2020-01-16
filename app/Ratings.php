@@ -11,7 +11,6 @@ class Ratings extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-      'company_id',
       'rating'
     ];
 
@@ -21,6 +20,6 @@ class Ratings extends Model
 
     public function companies()
     {
-      return $this->hasOne('App/Companies');
+      return $this->belongsTo('App\Companies', 'ratings_id', 'id');
     }
 }

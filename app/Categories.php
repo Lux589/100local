@@ -16,4 +16,9 @@ class Categories extends Model
     protected $hidden = [
       'id'
     ];
+
+    public function companies()
+    {
+      return $this->belongsTo('App\Companies', 'cotegory_id', 'id');
+    }
 }

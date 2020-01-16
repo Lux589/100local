@@ -15,9 +15,10 @@ class UpdateCompaniesTable extends Migration
     {
         Schema::table('companies', function (Blueprint $table) {
             //
-            $table->unsignedBigInteger('category_id');
+            $table->BigInteger('category_id')->nullable();
+            $table->BigInteger('ratings_id')->nullable();
+            $table->BigInteger('services_id')->nullable();
 
-            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 
@@ -29,7 +30,9 @@ class UpdateCompaniesTable extends Migration
     public function down()
     {
         Schema::table('companies', function (Blueprint $table) {
-            //
+            $table->dropColumn('category_id');
+            $table->dropColumn('services_id');
+            $table->dropColumn('ratings_id');
         });
     }
 }
