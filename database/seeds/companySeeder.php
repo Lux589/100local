@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 use App\Companies;
+use App\Services;
+use App\Ratings;
 
 class companySeeder extends Seeder
 {
